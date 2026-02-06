@@ -90,14 +90,14 @@ $varReplacements   = 0
 $condReplacements  = 0
 
 $log = [System.Collections.Generic.List[string]]::new()
-$log.Add("White-Label IBM Documentation — Change Log")
+$log.Add("White-Label IBM Documentation - Change Log")
 $log.Add("Date  : $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')")
 $log.Add("Root  : $RootPath")
 $log.Add("Mode  : $(if ($DryRun) {'DRY RUN (no files changed)'} else {'LIVE'})")
 $log.Add("=" * 70)
 
 if ($DryRun) {
-    Write-Host "=== DRY RUN — no files will be modified ===" -ForegroundColor Yellow
+    Write-Host "=== DRY RUN - no files will be modified ===" -ForegroundColor Yellow
     Write-Host ""
 }
 
@@ -198,5 +198,5 @@ if (-not $DryRun) {
     $log | Out-File -FilePath $LogFile -Encoding UTF8
     Write-Host "Change log written to: $LogFile" -ForegroundColor Green
 } else {
-    Write-Host "DRY RUN complete — no files were changed." -ForegroundColor Yellow
+    Write-Host "DRY RUN complete - no files were changed." -ForegroundColor Yellow
 }
